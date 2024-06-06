@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Three - Details</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mediaqueries.css">
+</head>
+<body>
+    <header>
+        <h1 class="centered-heading">AI Radio</h1>
+    </header>
+        <section id="project-details">
+            <h2>Project Details</h2>
+            <p>Fueled by AI, this radio app brings a dynamic listening experience to your fingertips. Developed with Flutter for a beautiful and adaptable interface, it seamlessly integrates with the Alan AI API for intuitive voice control. Tune in to your favorite FM stations or explore a diverse range of music categorized for every mood. With voice commands, you can effortlessly navigate genres, switch stations, and personalize your radio experience , all without lifting a finger.</p>
+            <div class="carousel">
+                <button class="carousel-button prev" onclick="moveSlide(-1)">&#10094;</button>
+                <div class="carousel-container">
+                    <img class="carousel-slide" src="./assets/radio-1.png" alt="Project three Detail 1">
+                    <img class="carousel-slide" src="./assets/radio-2.png" alt="Project three Detail 2">
+                    <img class="carousel-slide" src="./assets/radio-3.png" alt="Project three Detail 3">
+                    <img class="carousel-slide" src="./assets/radio-4.png" alt="Project three Detail 4">
+                </div>
+                <button class="carousel-button next" onclick="moveSlide(1)">&#10095;</button>
+            </div>
+            <button class="btn btn-color-2 project-description-btn" onclick="location.href='/'">Back to Projects</button>
+        </section>
+    <footer>
+        
+    </footer>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-slide');
+        const totalSlides = slides.length;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.style.display = (i === index) ? 'block' : 'none';
+            });
+        }
+
+        function moveSlide(step) {
+            currentSlide = (currentSlide + step + totalSlides) % totalSlides;
+            showSlide(currentSlide);
+        }
+        showSlide(currentSlide);
+    </script>
+</body>
+</html>
